@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '9'
+cache:
+  directories:
+  - node_modules
+script:
+- yarn test
+- yarn build
+deploy:
+  provider: heroku
+  app: limitless-fortress-43752
+  on:
+    repo: nasturtus/jargonstein
+  api_key:
+    secure: hNJ04P9ClMuj2R3yQTo9W6otw9wPfKcGIcNfwwdbLdgFLjXhupEXOB/RPmXYf3gYp+ukwtS5KFNSqtF+muVIzEhb5ZvNhwLs7COv/GLUvfODC5CtjusTD9WL/spFKRLww0I28T1qYYWQo+BCEpF3ceZe5HkQiYyy/RfAwL/obI74YYgrYKX5ZB6D/vJEjbFTqYBL07Ah+C89gHxmAFCZIeW23CEpKAntQp3ECXBZG/upYSkr8CCAIxiWk9rf+Gpog8HhGECkztBtSEUD1ZlY5V3ieSSA/9hpzxov+pm6TiyC2o0z4V03cs471wVAJyxNta8NaojacyQH0Xv26g8EHrlrEAh/DOyKtoCc0vLJRPopWeIJNod3rEg2dr7hjq3JfTf/8SHwWWoz5TuzqzHkIF6G3bKXbhtNngywIJ1o59MO8DmzKCT6BPk2PwtFgKTW+1Y4UF74v8ji0yMnDoEZn8fO5eGxTrGGmY5FH63mqLonW4SeM2kI9ZPGGmsPQ3rSDaBeXIx44kNK6Ut2h80W3t1zSskr9PXGKRmL3cOPbX8Of7p6veF+VBFZ57FMt+eSd59X5Z6izCAABFoaVORZcfFyYrz1VgUE8w65MkuyliRMqeCt11zfNbiU+PXEu99NuuPhAGqxWfzj6uPDYMYqRaK067L+pHc1oXfh36qq7/c=

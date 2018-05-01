@@ -1,0 +1,71 @@
+.landing-page-grid-container {
+  text-align: center;
+  align-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5%;
+  display: grid;
+  grid-gap: 0;
+}
+
+.intro-copy {
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 175%;
+  padding: 10%;
+  font-family: "Montserrat", sans-serif;
+}
+
+@keyframes bottomFadeOut {
+  0% {
+    position: absolute;
+    bottom: -5rem;
+    opacity: 0;
+  }
+
+  75% {
+    position: absolute;
+    bottom: 25%;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.landing-page-button {
+  height: 50px;
+  width: 200px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(91, 3, 255);
+  border: none;
+  border-radius: 30px;
+  color: yellow;
+  font-size: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.landing-page-button:hover {
+  background: black;
+  color: yellow;
+}
+
+.landing-page-button:focus {
+  outline: none;
+}
+
+.landing-page-link {
+  text-decoration: none;
+}
+
+a .landing-page-link:hover {
+  text-decoration: none;
+  color: white;
+}

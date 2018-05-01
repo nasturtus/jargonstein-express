@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "dotenv": "^5.0.1"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  }
+}

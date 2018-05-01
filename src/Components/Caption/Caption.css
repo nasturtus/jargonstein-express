@@ -1,0 +1,19 @@
+.caption-grid-container {
+  display: grid;
+  text-align: center;
+}
+
+caption-heading {
+  font-family: "Croissant One", cursive;
+  font-size: 250%;
+  color: yellow;
+}
+
+caption-subheading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%;
+  color: white;
+  background: black;
+  padding: 1%;
+  border-radius: 5px;
+}

@@ -1,0 +1,90 @@
+.grid-container {
+  display: grid;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  padding: 30px;
+}
+
+.grid-item-jargon {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-size: 125%;
+  color: yellow;
+  margin-bottom: 0;
+}
+
+.grid-item-explanation {
+  color: white;
+  margin-top: 0;
+  line-height: 150%;
+  font-size: 100%;
+}
+
+.grid-item-button {
+  text-align: center;
+  padding: 5px;
+}
+
+.newslistings-button {
+  height: 50px;
+  width: 200px;
+  background: rgb(91, 3, 255);
+  border: none;
+  border-radius: 30px;
+  color: yellow;
+  font-size: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.newslistings-button:hover {
+  background: black;
+  color: yellow;
+}
+
+.newslistings-button:focus {
+  outline: none;
+}
+
+.intro-line-to-listings {
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  margin-top: 20px;
+}
+
+.grid-item-newsListings {
+  border: solid 1px white;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 20px;
+  background: white;
+  line-height: 150%;
+}
+
+.newslistings-link {
+  text-decoration: none;
+}
+
+.newslistings:hover {
+  background: gray;
+  color: white;
+}
+
+.fade-in {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
