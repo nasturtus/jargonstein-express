@@ -1,5 +1,11 @@
 const jargonList = [
   {
+    id: 0,
+    jargon: "synaesthesia",
+    explanation:
+      "A neurological condition that results in a joining or merging of senses that aren't normally connected resulting in sensory mash-up. For example, someone with synaesthesia may hear colour or see sound."
+  },
+  {
     id: 1,
     jargon: "cryptocurrency",
     explanation: "A cryptocurrency like Bitcoin, Etheremum, Litecoin."

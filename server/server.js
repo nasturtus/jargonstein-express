@@ -41,24 +41,22 @@ Jargon.remove({}, function(err) {
 });
 
 // insert jargonList into collection and initialise document count
+const NO_OF_DOCUMENTS = [];
+
 Jargon.collection.insert(jargonList, function(err, docs) {
   if (err) {
     return console.error(err);
   } else {
-    console.log("Collection initialised with JargonList seed data");
+    console.log(`Collection initialised with ${docs.insertedCount} records`);
+    NO_OF_DOCUMENTS[0] = docs.insertedCount;
   }
 });
 
-const NO_OF_DOCUMENTS = Jargon.count({}, function(err, count) {
-  return count;
-});
-
-console.log(`No. of documents in collection: ${NO_OF_DOCUMENTS}`);
+// naming this module export 'count' because it returns the count of documents in a collection
+module.exports.count = function getDocumentCount() {
+  return NO_OF_DOCUMENTS;
+};
 
 // set up middleware / route
 let jargon = require("./routes/jargon");
 app.use("/api/jargon", jargon);
-
-module.exports = {
-  NO_OF_DOCUMENTS
-};
