@@ -8,10 +8,11 @@
 }
 
 .grid-item-jargon {
+  letter-spacing: 2px;
   font-family: "Titillium Web", sans-serif;
   font-weight: 700;
   font-size: 125%;
-  color: yellow;
+  color: rgba(177, 177, 10, 0.808);
   margin-bottom: 0;
 }
 
@@ -30,7 +31,7 @@
 .newslistings-button {
   height: 50px;
   width: 200px;
-  background: rgb(91, 3, 255);
+  background: black;
   border: none;
   border-radius: 30px;
   color: yellow;
@@ -43,7 +44,7 @@
 }
 
 .newslistings-button:hover {
-  background: black;
+  background: rgb(80, 78, 78);
   color: yellow;
 }
 
@@ -65,7 +66,7 @@
   border: solid 1px white;
   border-radius: 5px;
   text-decoration: none;
-  padding: 2%;
+  padding: 3%;
   background: transparent;
   line-height: 150%;
 }
