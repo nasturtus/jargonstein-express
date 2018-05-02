@@ -13,9 +13,10 @@ class LandingPage extends Component {
           <Caption />
         </div>
         <div className="grid-item">
-          <Typing>
+          <Typing speed={40}>
+            {/* <Typing.Cursor className={{ color: "white" }} /> */}
             <p className="intro-copy">
-              Discover new jargon. And find related news mentions.{" "}
+              Discover new jargon. And find related news mentions.
             </p>
           </Typing>
         </div>
