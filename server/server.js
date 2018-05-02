@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 
 // find an appropriate database to connect to, or default to localhost if we don't find one.
 var uristring =
+  process.env.MONGODB_URI ||
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
   "mongodb://localhost/jargonstein-db";
