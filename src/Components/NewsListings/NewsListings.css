@@ -36,7 +36,7 @@
   color: yellow;
   font-size: 100%;
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-weight: 200;
   margin: 10px;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -52,23 +52,27 @@
 }
 
 .intro-line-to-listings {
-  font-weight: 700;
+  font-weight: 200;
+  font-size: 125%;
   font-family: "Montserrat", sans-serif;
-  color: black;
+  color: whitesmoke;
   margin-top: 20px;
 }
 
 .grid-item-newsListings {
+  margin-top: 2%;
+  margin-bottom: 2%;
   border: solid 1px white;
   border-radius: 5px;
   text-decoration: none;
-  padding: 20px;
-  background: white;
+  padding: 2%;
+  background: transparent;
   line-height: 150%;
 }
 
 .newslistings-link {
   text-decoration: none;
+  color: white;
 }
 
 .newslistings:hover {
@@ -76,8 +80,17 @@
   color: white;
 }
 
+#newslistings-span {
+  font-weight: 700;
+  color: gray;
+}
+
 .fade-in {
   animation: fadeIn 1s;
+}
+
+li {
+  color: white; 
 }
 
 @keyframes fadeIn {

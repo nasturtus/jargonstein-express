@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee+Hairline");
+
 .caption-grid-container {
   display: grid;
   text-align: center;
 }
 
 caption-heading {
-  font-family: "Croissant One", cursive;
+  font-family: "Bungee Hairline", cursive;
   font-size: 250%;
   color: yellow;
 }

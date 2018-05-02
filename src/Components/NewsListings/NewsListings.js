@@ -8,11 +8,13 @@ const NewsListings = props => {
   const jargon = props.jargon.toUpperCase();
   const explanation = props.explanation;
   const articles = props.articles;
+  const clipBoardtext = jargon + "\n" + explanation;
   return (
     <div className="grid-container">
       <p className="grid-item-jargon">{jargon}</p>
       <p className="grid-item-explanation">{explanation}</p>
-      <CopyButton selector="grid-item-jargon" />
+      <CopyButton text={clipBoardtext} />
+
       <div className="grid-item-newsListings fade-in">
         <p className="intro-line-to-listings">
           Explore this jargon further with these news articles...
@@ -28,8 +30,8 @@ const NewsListings = props => {
                   target="_blank"
                 >
                   {article.title}
-                </a>{" "}
-                <span id="newslistings-span">{article.source.name}</span>
+                </a>
+                <span id="newslistings-span"> | {article.source.name}</span>
               </li>
             </div>
           );
