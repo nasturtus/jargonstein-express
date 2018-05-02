@@ -43,14 +43,10 @@ class Jargon extends Component {
     await fetch("api/jargon")
       .then(response => response.json())
       .then(data => {
-        console.log(
-          `data received from server: ${data.jargon} and ${data.explanation}`
-        );
         this.setState({ jargon: data.jargon, explanation: data.explanation });
         jargon = data.jargon;
       });
     const apiEndpoint = this.buildFetchQuery(jargon);
-    console.log(`query built: ${apiEndpoint}`);
     this.fetchArticles(apiEndpoint);
   }
 
@@ -58,7 +54,6 @@ class Jargon extends Component {
     let searchJargon = jargon + "&";
     const url = "https://newsapi.org/v2/everything?q=";
     const apiKey = process.env.REACT_APP_API_KEY;
-    console.log(`In Jargon.js, api key is ${apiKey}`);
     const pageSize = "5&";
     const sources = newsSources.join(",") + "&";
 
