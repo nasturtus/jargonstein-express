@@ -8,7 +8,7 @@ const jargonList = [
   {
     id: 1,
     jargon: "cryptocurrency",
-    explanation: "A cryptocurrency like Bitcoin, Etheremum, Litecoin."
+    explanation: "A cryptocurrency like Bitcoin, Ethereum, Litecoin."
   },
   {
     id: 2,
