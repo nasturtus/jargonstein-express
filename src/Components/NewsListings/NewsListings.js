@@ -1,22 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import CopyButton from "../CopyButton";
 import "./NewsListings.css";
 
 const NewsListings = props => {
-  const jargon = props.jargonList[props.jargonIndex].jargon.toUpperCase();
-  const explanation = props.jargonList[props.jargonIndex].explanation;
+  const jargon = props.jargon.toUpperCase();
+  const explanation = props.explanation;
   const articles = props.articles;
   return (
     <div className="grid-container">
       <p className="grid-item-jargon">{jargon}</p>
       <p className="grid-item-explanation">{explanation}</p>
+      <CopyButton selector="grid-item-jargon" />
       <div className="grid-item-newsListings fade-in">
         <p className="intro-line-to-listings">
           Explore this jargon further with these news articles...
         </p>
 
-        {articles.map((article, index, arr) => {
+        {articles.map((article, index) => {
           return (
             <div key={index}>
               <li className="newslistings-article">
@@ -36,7 +38,7 @@ const NewsListings = props => {
       <div className="grid-item-button">
         <button
           className="newslistings-button"
-          onClick={props.generateNewJargon}
+          onClick={props.handleFetchContent}
         >
           Show Next
         </button>
@@ -46,10 +48,10 @@ const NewsListings = props => {
 };
 
 NewsListings.propTypes = {
-  jargonList: PropTypes.array.isRequired,
-  jargonIndex: PropTypes.number.isRequired,
+  jargon: PropTypes.string.isRequired,
+  explanation: PropTypes.string.isRequired,
   articles: PropTypes.array.isRequired,
-  generateNewJargon: PropTypes.func.isRequired
+  handleFetchContent: PropTypes.func.isRequired
 };
 
 export default NewsListings;

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import NewsListings from "../NewsListings";
 
 // seed-data
-import jargonList from "../../seed-data/jargonList";
 import newsSources from "../../seed-data/newsSources";
 
 import "./Jargon.css";
@@ -11,46 +10,48 @@ class Jargon extends Component {
   constructor() {
     super();
     this.state = {
-      jargonList: jargonList,
-      index: 0,
+      jargon: "",
+      explanation: "",
       articles: [],
       isLoaded: false
     };
-    this.generateNewJargon = this.generateNewJargon.bind(this);
+    this.fetchContent = this.fetchContent.bind(this);
   }
 
   componentDidMount() {
-    fetch("api/jargon")
-      .then(response => response.json())
-      .then(data =>
-        console.log(
-          `data received from server: ${data.jargon} and ${data.explanation}`
-        )
-      );
-    this.generateNewJargon();
+    this.fetchContent();
   }
 
   render() {
     if (this.state.isLoaded) {
       return (
         <NewsListings
-          jargonList={this.state.jargonList}
-          jargonIndex={this.state.index}
+          jargon={this.state.jargon}
+          explanation={this.state.explanation}
           articles={this.state.articles}
-          generateNewJargon={this.generateNewJargon}
+          handleFetchContent={this.fetchContent}
         />
       );
     }
     return <div className="loader" />;
   }
 
-  generateNewJargon() {
-    const index = (this.state.index + 1) % this.state.jargonList.length;
-    const jargon = this.state.jargonList[index].jargon.toUpperCase();
-    const apiEndpoint = this.buildFetchQuery(jargon);
-
+  async fetchContent() {
     this.setState({ isLoaded: false });
-    this.fetchArticles(apiEndpoint, index);
+    let jargon;
+
+    await fetch("api/jargon")
+      .then(response => response.json())
+      .then(data => {
+        console.log(
+          `data received from server: ${data.jargon} and ${data.explanation}`
+        );
+        this.setState({ jargon: data.jargon, explanation: data.explanation });
+        jargon = data.jargon;
+      });
+    const apiEndpoint = this.buildFetchQuery(jargon);
+    console.log(`query built: ${apiEndpoint}`);
+    this.fetchArticles(apiEndpoint);
   }
 
   buildFetchQuery(jargon) {
@@ -76,14 +77,12 @@ class Jargon extends Component {
     return apiEndpoint;
   }
 
-  fetchArticles(apiEndpoint, index) {
+  fetchArticles(apiEndpoint) {
     fetch(apiEndpoint)
       .then(response => response.json())
       .then(json => json.articles)
       .then(articles =>
         this.setState({
-          jargonList: this.state.jargonList,
-          index: index,
           articles: articles,
           isLoaded: true
         })

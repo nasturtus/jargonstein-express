@@ -8,9 +8,9 @@ const Jargon = require("../../models/jargon-model");
 const collection = require("../server");
 
 router.get("/", (req, res) => {
-  console.log("in router jargon");
+  console.log("\nin router jargon");
   let documentCount = collection.count();
-
+  console.log(`Total no. of documents in collection: ${documentCount}`);
   let id = Math.floor(Math.random() * documentCount);
   console.log("To retrieve document with id", id);
   Jargon.findOne()
@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
     .select("jargon explanation")
     .exec(function(err, document) {
       if (err) return handleError(err);
-      console.log(document);
+      console.log(document.jargon);
       res.json(document);
     });
 });

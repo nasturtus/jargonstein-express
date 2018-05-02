@@ -53,6 +53,7 @@ Jargon.collection.insert(jargonList, function(err, docs) {
 });
 
 // naming this module export 'count' because it returns the count of documents in a collection
+// NO_OF_DOCUMENTS required by jargon.js to generate randomn number for document retrieval
 module.exports.count = function getDocumentCount() {
   return NO_OF_DOCUMENTS;
 };
