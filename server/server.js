@@ -36,20 +36,24 @@ mongoose.connect(uristring, function(err, res) {
 const Jargon = require("../models/jargon-model");
 const jargonList = require("../models/jargonListSeedData");
 
-Jargon.remove({}, function(err) {
-  console.log("Previous collection removed");
-});
-
-// insert jargonList into collection and initialise document count
+// initialise document count constant
 const NO_OF_DOCUMENTS = [];
 
-Jargon.collection.insert(jargonList, function(err, docs) {
-  if (err) {
-    return console.error(err);
-  } else {
-    console.log(`Collection initialised with ${docs.insertedCount} records`);
-    NO_OF_DOCUMENTS[0] = docs.insertedCount;
-  }
+// collection.remove() is async.
+// so first clear collection of existing documents, the use callback for
+// collection.insert()
+Jargon.remove({}, function(err) {
+  console.log("Previous collection removed");
+
+  // then insert fresh set of documents into collection
+  Jargon.collection.insert(jargonList, function(err, docs) {
+    if (err) {
+      return console.error(err);
+    } else {
+      console.log(`Collection initialised with ${docs.insertedCount} records`);
+      NO_OF_DOCUMENTS[0] = docs.insertedCount;
+    }
+  });
 });
 
 // naming this module export 'count' because it returns the count of documents in a collection
