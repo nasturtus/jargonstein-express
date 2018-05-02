@@ -8,6 +8,7 @@
     "dotenv": "^5.0.1"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "NODE_ENV=local nodemon server.js"
   }
 }
