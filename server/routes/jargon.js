@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const Jargon = require("../models/jargon-model");
 
-// require the server file(module) and save it into a const called collection
+// require the server file(module) and save exported const into a const called collection
 // so that calling collection.count() is descriptive
 const collection = require("../server");
 

@@ -1,8 +1,5 @@
-// if (process.env.NODE_ENV !== "production") {
-//   require("dotenv").load();
-// }
-
 const express = require("express");
+
 
 const path = require("path");
 // specify how to serve static file
@@ -21,6 +18,8 @@ var uristring =
 
 // create express server instance
 const app = express();
+// cors = require("cors")
+// app.use(cors)
 
 // listen on port defined in process.env.PORT or default to 5000
 
@@ -72,5 +71,5 @@ module.exports.count = function getDocumentCount() {
 };
 
 // set up middleware / route
-let jargon = require("./routes/jargon");
-app.use("/api/jargon", jargon);
+let routeToJargon = require("./routes/jargon");
+app.use("/api/jargon", routeToJargon);

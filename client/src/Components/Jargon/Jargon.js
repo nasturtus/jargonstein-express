@@ -6,6 +6,10 @@ import newsSources from "../../seed-data/newsSources";
 
 import "./Jargon.css";
 
+// to deal with CORS-related issues
+const cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+const API_KEY = "1ac76a8ce51442738b51ba627fd92210"
+
 class Jargon extends Component {
   constructor() {
     super();
@@ -37,12 +41,15 @@ class Jargon extends Component {
   }
 
   async fetchContent() {
+    console.log("In client > Jargon.js > fetchContent")
     this.setState({ isLoaded: false });
     let jargon;
 
-    await fetch("/api/jargon")
+    await fetch("api/jargon")
       .then(response => response.json())
       .then(data => {
+        console.log("data received from server")
+        console.log(data)
         this.setState({ jargon: data.jargon, explanation: data.explanation });
         jargon = data.jargon;
       });
@@ -52,8 +59,9 @@ class Jargon extends Component {
 
   buildFetchQuery(jargon) {
     let searchJargon = jargon + "&";
-    const url = "https://newsapi.org/v2/everything?q=";
-    const apiKey = process.env.REACT_APP_API_KEY;
+    const url = cors_api_url + "https://newsapi.org/v2/everything?q=";
+    // const apiKey = process.env.REACT_APP_API_KEY;
+    // console.log(apiKey)
     const pageSize = "5&";
     const sources = newsSources.join(",") + "&";
 
@@ -67,7 +75,7 @@ class Jargon extends Component {
       "sources=" +
       sources +
       "apiKey=" +
-      apiKey;
+      API_KEY;
 
     return apiEndpoint;
   }

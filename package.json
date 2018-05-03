@@ -5,18 +5,12 @@
     "scripts": {
       "precommit": "lint-staged",
       "install": "(cd client && yarn) && (cd server && yarn)",
-      "install:windows": "cd client&&yarn&&cd ../server&&yarn",
       "temp": "echo 'running'",
       "test": "(cd client && CI=true yarn test) && (cd server && yarn test)",
       "test:all": "./run_all_tests.sh",
-      "test:windows":
-        "(cd client&&set CI=true&&yarn test)&&(cd ../server&&yarn test:windows)",
       "build": "concurrently \"cd client&&yarn build\"",
       "heroku-postbuild": "yarn build",
-      "start:dev:server:windows": "cd server&&yarn dev:windows",
       "start:dev:server": "cd server&&yarn dev",
-      "start:windows":
-        "concurrently --kill-others-on-fail \"yarn start:dev:server:windows\" \"yarn start:client\"",
       "start":
         "concurrently --kill-others-on-fail \"yarn start:dev:server\" \"yarn start:client\"",
       "start:prod:server": "cd server&&yarn start",
