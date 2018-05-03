@@ -1,12 +1,13 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").load();
-}
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").load();
+// }
 
 const express = require("express");
+
+const path = require("path");
 // specify how to serve static file
 const staticFiles = express.static(path.join(__dirname, "../client/build"));
 
-const path = require("path");
 const mongoose = require("mongoose");
 
 // ------from heroku website: https://devcenter.heroku.com/articles/nodejs-mongoose
@@ -41,8 +42,8 @@ mongoose.connect(uristring, function(err, res) {
 
 // now that db is successfully connected, import Jargon model and initialise the
 // db by importing seed-data from jargonList. before initialising, however, clear db of all previous records.
-const Jargon = require("../models/jargon-model");
-const jargonList = require("../models/jargonListSeedData");
+const Jargon = require("./models/jargon-model");
+const jargonList = require("./models/jargonListSeedData");
 
 // initialise document count constant
 const NO_OF_DOCUMENTS = [];
