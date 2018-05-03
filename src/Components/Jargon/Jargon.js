@@ -40,7 +40,7 @@ class Jargon extends Component {
     this.setState({ isLoaded: false });
     let jargon;
 
-    await fetch("api/jargon")
+    await fetch("/api/jargon")
       .then(response => response.json())
       .then(data => {
         this.setState({ jargon: data.jargon, explanation: data.explanation });
