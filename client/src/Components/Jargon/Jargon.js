@@ -4,11 +4,15 @@ import NewsListings from "../NewsListings";
 // seed-data
 import newsSources from "../../seed-data/newsSources";
 
+
+// API Key
+import {REACT_APP_API_KEY} from './keys'
+
 import "./Jargon.css";
 
 // to deal with CORS-related issues
 const cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-const API_KEY = "1ac76a8ce51442738b51ba627fd92210"
+
 
 class Jargon extends Component {
   constructor() {
@@ -75,7 +79,7 @@ class Jargon extends Component {
       "sources=" +
       sources +
       "apiKey=" +
-      API_KEY;
+      REACT_APP_API_KEY;
 
     return apiEndpoint;
   }

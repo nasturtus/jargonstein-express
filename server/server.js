@@ -18,6 +18,8 @@ var uristring =
 
 // create express server instance
 const app = express();
+// commenting the following two lines because doing so client is able to resolve /api/jargon
+// try uncommenting, and you will find that fetch('/api/jargon') does not go to server.
 // cors = require("cors")
 // app.use(cors)
 
