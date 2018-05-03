@@ -3,6 +3,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
+// specify how to serve static file
+const staticFiles = express.static(path.join(__dirname, "../client/build"));
+
 const path = require("path");
 const mongoose = require("mongoose");
 
