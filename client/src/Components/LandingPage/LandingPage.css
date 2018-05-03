@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100");
+
 .landing-page-grid-container {
   text-align: center;
   align-content: center;
@@ -9,28 +11,19 @@
 }
 
 .intro-copy {
-  color: white;
-  font-family: Helvetica, sans-serif;
-  font-size: 175%;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: calc(16px + 1.25vw);
   padding: 10%;
-  font-family: "Montserrat", sans-serif;
+  animation: fadeIn 5s;
 }
 
-@keyframes bottomFadeOut {
+@keyframes fadeIn {
   0% {
-    position: absolute;
-    bottom: -5rem;
     opacity: 0;
   }
-
-  75% {
-    position: absolute;
-    bottom: 25%;
-    opacity: 1;
-  }
-
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -46,7 +39,7 @@
   border-radius: 30px;
   color: yellow;
   font-size: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

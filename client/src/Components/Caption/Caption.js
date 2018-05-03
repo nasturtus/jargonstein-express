@@ -10,12 +10,6 @@ const Caption = () => (
         <caption-heading>Jargonstein</caption-heading>
       </Link>
     </p>
-
-    <p>
-      <caption-subheading>
-        A Jargon Buster for the Curious & Clueless
-      </caption-subheading>
-    </p>
   </div>
 );
 

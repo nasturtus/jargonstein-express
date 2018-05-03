@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,500,900");
+
 .grid-container {
   display: grid;
   text-align: left;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;
   padding: 30px;
@@ -9,18 +11,20 @@
 
 .grid-item-jargon {
   letter-spacing: 2px;
-  font-family: "Titillium Web", sans-serif;
-  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
   font-size: 125%;
-  color: rgba(177, 177, 10, 0.808);
+  color: black;
   margin-bottom: 0;
 }
 
 .grid-item-explanation {
-  color: white;
+  color: black;
   margin-top: 0;
   line-height: 150%;
   font-size: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
 .grid-item-button {
@@ -34,10 +38,10 @@
   background: black;
   border: none;
   border-radius: 30px;
-  color: yellow;
-  font-size: 100%;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 200;
+  color: white;
+  font-size: 125%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
   margin: 10px;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -55,8 +59,8 @@
 .intro-line-to-listings {
   font-weight: 200;
   font-size: 125%;
-  font-family: "Montserrat", sans-serif;
-  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  color: black;
   margin-top: 20px;
 }
 
@@ -69,11 +73,14 @@
   padding: 3%;
   background: transparent;
   line-height: 150%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 100%;
 }
 
 .newslistings-link {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .newslistings:hover {
@@ -82,8 +89,8 @@
 }
 
 #newslistings-span {
-  font-weight: 700;
-  color: gray;
+  font-weight: 500;
+  color: black;
 }
 
 .fade-in {
@@ -91,7 +98,7 @@
 }
 
 li {
-  color: white; 
+  color: white;
 }
 
 @keyframes fadeIn {

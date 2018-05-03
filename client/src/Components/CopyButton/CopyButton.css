@@ -1,16 +1,13 @@
-/* @import url("https://rawgit.com/minhtranite/react-notifications/next/dist/react-notifications.css"); */
+@import url("https://fonts.googleapis.com/css?family=Poppins:200");
 
 .copyButton {
   height: auto;
   width: auto;
   margin-bottom: 1%;
   background: gray;
-  border-radius: 5%;
-  border: solid 5% black;
   color: black;
   font-size: 75%;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Caption from "../Caption";
 import { Link } from "react-router-dom";
-import Typing from "react-typing-animation";
 
 import "./LandingPage.css";
 
@@ -13,12 +12,9 @@ class LandingPage extends Component {
           <Caption />
         </div>
         <div className="grid-item">
-          <Typing speed={40}>
-            {/* <Typing.Cursor className={{ color: "white" }} /> */}
-            <p className="intro-copy">
-              Discover new jargon. And find related news mentions.
-            </p>
-          </Typing>
+          <p className="intro-copy">
+            Discover new jargon. And find related news mentions.
+          </p>
         </div>
         <div className="grid-item">
           <Link to="/jargonstein" className="landing-page-link">
