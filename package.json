@@ -1,56 +1,49 @@
 {
-    "name": "jargonstein-react-express",
-    "version": "1.0.0",
-    "description": "Jargonstein running React and Express together",
-    "scripts": {
-      "precommit": "lint-staged",
-      "install": "(cd client && yarn) && (cd server && yarn)",
-      "temp": "echo 'running'",
-      "test": "(cd client && CI=true yarn test) && (cd server && yarn test)",
-      "test:all": "./run_all_tests.sh",
-      "build": "concurrently \"cd client&&yarn build\"",
-      "heroku-postbuild": "yarn build",
-      "start:dev:server": "cd server&&yarn dev",
-      "start":
-        "concurrently --kill-others-on-fail \"yarn start:dev:server\" \"yarn start:client\"",
-      "start:prod:server": "cd server&&yarn start",
-      "start:client": "cd client&&yarn start",
-      "test:cypress": "cypress open"
-    },
-    "engines": {
-      "node": "^9.6.0",
-      "yarn": "1.5.1"
-    },
-    "cacheDirectories": [
-      "node_modules",
-      "client/node_modules",
-      "server/node_modules"
-    ],
-    "repository": {
-      "type": "git",
-      "url":
-        "https://github.com/nasturtus/jargonstein-express"
-    },
-    "license": "MIT",
-    "devDependencies": {
-      "concurrently": "^3.5.1",
-      "cypress": "^2.1.0",
-      "husky": "^0.14.3",
-      "lint-staged": "^7.0.2",
-      "mock-local-storage": "^1.0.5",
-      "prettier": "^1.11.1"
-    },
-    "lint-staged": {
-      "**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
-    },
-    "dependencies": {
-      "bootstrap": "^4.0.0",
-      "enzyme": "^3.3.0",
-      "jest": "^22.4.3",
-      "query-string": "^6.0.0",
-      "react-bootstrap": "^0.32.1",
-      "react-router-navigation-prompt": "^1.6.0",
-      "reactstrap": "^5.0.0"
-    }
+  "name": "jargonstein-react-express",
+  "version": "1.0.0",
+  "description": "Jargonstein running React and Express together",
+  "scripts": {
+    "precommit": "lint-staged",
+    "install": "(cd client && yarn) && (cd server && yarn)",
+    "temp": "echo 'running'",
+    "test": "(cd client && CI=true yarn test) && (cd server && yarn test)",
+    "test:all": "./run_all_tests.sh",
+    "build": "concurrently \"cd client&&yarn build\"",
+    "heroku-postbuild": "yarn build",
+    "start:dev:server": "cd server&&yarn dev",
+    "start":
+      "concurrently --kill-others-on-fail \"yarn start:dev:server\" \"yarn start:client\"",
+    "start:prod:server": "cd server&&yarn start",
+    "start:client": "cd client&&yarn start",
+    "test:cypress": "cypress open"
+  },
+  "engines": {
+    "node": "^9.6.0",
+    "yarn": "1.6.0"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules",
+    "server/node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nasturtus/jargonstein-express"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.2",
+    "mock-local-storage": "^1.0.5",
+    "prettier": "^1.11.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
+  },
+  "dependencies": {
+    "enzyme": "^3.3.0",
+    "jest": "^22.4.3",
+    "query-string": "^6.0.0"
   }
-  
+}
