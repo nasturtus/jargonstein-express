@@ -4,15 +4,11 @@ import NewsListings from "../NewsListings";
 // seed-data
 import newsSources from "../../seed-data/newsSources";
 
-
-// API Key
-import {REACT_APP_API_KEY} from './keys'
-
 import "./Jargon.css";
 
 // to deal with CORS-related issues
-const cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-
+const cors_api_url = "https://cors-anywhere.herokuapp.com/";
+const REACT_APP_API_KEY = "1ac76a8ce51442738b51ba627fd92210";
 
 class Jargon extends Component {
   constructor() {
@@ -45,15 +41,15 @@ class Jargon extends Component {
   }
 
   async fetchContent() {
-    console.log("In client > Jargon.js > fetchContent")
+    console.log("In client > Jargon.js > fetchContent");
     this.setState({ isLoaded: false });
     let jargon;
 
     await fetch("api/jargon")
       .then(response => response.json())
       .then(data => {
-        console.log("data received from server")
-        console.log(data)
+        console.log("data received from server");
+        console.log(data);
         this.setState({ jargon: data.jargon, explanation: data.explanation });
         jargon = data.jargon;
       });
