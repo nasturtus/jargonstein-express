@@ -6,6 +6,9 @@ client/node_modules
 server/node_modules
 node_modules
 
+# dev
+client/build
+
 # testing
 /coverage
 

@@ -14,7 +14,7 @@
     "start":
       "concurrently --kill-others-on-fail \"yarn start:dev:server\" \"yarn start:client\"",
     "start:prod:server": "cd server&&yarn start",
-    "start:prod:client": "cd client&&yarn start"
+    "start:client": "cd client&&yarn start"
   },
   "engines": {
     "node": "^9.6.0",

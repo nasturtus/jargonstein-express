@@ -1,6 +1,5 @@
 const express = require("express");
 
-
 const path = require("path");
 // specify how to serve static file
 const staticFiles = express.static(path.join(__dirname, "../client/build"));
@@ -18,6 +17,14 @@ var uristring =
 
 // create express server instance
 const app = express();
+
+// set up middleware / route
+let routeToJargon = require("./routes/jargon");
+
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+});
+app.use("/api/jargon", routeToJargon);
 // commenting the following two lines because doing so client is able to resolve /api/jargon
 // try uncommenting, and you will find that fetch('/api/jargon') does not go to server.
 // cors = require("cors")
@@ -71,7 +78,3 @@ Jargon.remove({}, function(err) {
 module.exports.count = function getDocumentCount() {
   return NO_OF_DOCUMENTS;
 };
-
-// set up middleware / route
-let routeToJargon = require("./routes/jargon");
-app.use("/api/jargon", routeToJargon);
